@@ -1,5 +1,6 @@
 import datetime
 import telebot
+import os
 from telebot import types
 from DB import PharmacyDB
 from datetime import datetime
@@ -333,7 +334,7 @@ class PharmacyBot:
 
 
 if __name__ == "__main__":
-    token = "..."
-    uri = "..."
+    token = os.environ.get('TELEGRAM_TOKEN')
+    uri = os.environ.get('BD_TOKEN')
     bot = PharmacyBot(token, uri)
     bot.start_polling()
