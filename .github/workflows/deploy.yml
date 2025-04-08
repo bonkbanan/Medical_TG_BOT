@@ -25,11 +25,3 @@ jobs:
     - name: Run tests
       run: |
         python -m unittest tests.test_db tests.test_phramacy
-
-    - name: Deploy bot
-      if: success()  # Запускати деплой тільки якщо тести пройшли успішно
-      env:
-        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-        BD_TOKEN: ${{ secrets.BD_TOKEN }}
-      run: |
-        python PharmacyBot.py
