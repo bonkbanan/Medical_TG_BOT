@@ -24,7 +24,7 @@ jobs:
 
     - name: Run tests
       run: |
-        python -m unittest tests/test_db.py tests/test_pharmacy.py
+        python -m unittest tests.test_db tests.test_pharmacy
 
     - name: Deploy bot
       if: success()  # Запускати деплой тільки якщо тести пройшли успішно
